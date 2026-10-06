@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARENA ONE — 1v1 FPS</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="hud">
+      <div class="hud-top">
+        <div class="brand">
+          <span class="brand-mark">ARENA</span>
+          <span class="brand-one">ONE</span>
+        </div>
+        <div class="round-chip" id="roundChip">1v1 · LIVE</div>
+      </div>
+
+      <div class="health-row">
+        <div class="health-block you">
+          <div class="health-label">YOU</div>
+          <div class="bar"><div id="playerBar" class="fill"></div></div>
+          <div class="hp" id="playerHp">100</div>
+        </div>
+        <div class="health-block foe">
+          <div class="health-label">RIVAL</div>
+          <div class="bar"><div id="botBar" class="fill"></div></div>
+          <div class="hp" id="botHp">100</div>
+        </div>
+      </div>
+
+      <div class="crosshair" id="crosshair">
+        <span class="ch h"></span>
+        <span class="ch v"></span>
+        <span class="ch dot"></span>
+      </div>
+
+      <div class="weapon-hint">
+        <kbd>↑</kbd><kbd>↓</kbd> move
+        <kbd>←</kbd><kbd>→</kbd> turn
+        <kbd>SPACE</kbd> fire
+      </div>
+    </div>
+
+    <div id="overlay" class="overlay">
+      <div class="panel">
+        <p class="kicker">NEON COLOSSEUM</p>
+        <h1>ARENA ONE</h1>
+        <p class="lead">
+          First-person duel in a closed arena. One computer rival. Last fighter
+          standing wins.
+        </p>
+        <ul class="controls">
+          <li><kbd>↑</kbd> / <kbd>↓</kbd> — move forward / back</li>
+          <li><kbd>←</kbd> / <kbd>→</kbd> — turn</li>
+          <li><kbd>SPACE</kbd> — fire plasma</li>
+        </ul>
+        <button id="startBtn" type="button">ENTER ARENA</button>
+      </div>
+    </div>
+
+    <div id="flash"></div>
+    <canvas id="game"></canvas>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+        }
+      }
+    </script>
+    <script type="module" src="game.js"></script>
+  </body>
+</html>
